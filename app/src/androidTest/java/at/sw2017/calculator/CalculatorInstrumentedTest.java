@@ -60,13 +60,7 @@ public class CalculatorInstrumentedTest {
     public void testClearButton(){
         onView(withText("3")).perform(click());
         onView(withText("C")).perform(click());
-        onView(withId(R.id.txt)).check(matches(withText("0")));
-    }
-
-    @Test
-    public void testDoAddition(){
-        int result = Calculations.doAddition(2, 3);
-        assertEquals(5, result);
+        onView(withId(R.id.numberView)).check(matches(withText("0")));
     }
 
 }
