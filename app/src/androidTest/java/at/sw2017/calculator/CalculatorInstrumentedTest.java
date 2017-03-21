@@ -63,5 +63,41 @@ public class CalculatorInstrumentedTest {
         onView(withId(R.id.numberView)).check(matches(withText("0")));
     }
 
+    @Test
+    public void testAdd(){
+        onView(withText("5")).perform(click());
+        onView(withText("+")).perform(click());
+        onView(withText("5")).perform(click());
+        onView(withText("=")).perform(click());
+        onView(withId(R.id.numberView)).check(matches(withText("10")));
+    }
+
+    @Test
+    public void testSub(){
+        onView(withText("5")).perform(click());
+        onView(withText("-")).perform(click());
+        onView(withText("5")).perform(click());
+        onView(withText("=")).perform(click());
+        onView(withId(R.id.numberView)).check(matches(withText("0")));
+    }
+
+    @Test
+    public void testDiv(){
+        onView(withText("5")).perform(click());
+        onView(withText("/")).perform(click());
+        onView(withText("5")).perform(click());
+        onView(withText("=")).perform(click());
+        onView(withId(R.id.numberView)).check(matches(withText("1")));
+    }
+
+    @Test
+    public void testMul(){
+        onView(withText("5")).perform(click());
+        onView(withText("*")).perform(click());
+        onView(withText("5")).perform(click());
+        onView(withText("=")).perform(click());
+        onView(withId(R.id.numberView)).check(matches(withText("25")));
+    }
+
 }
 
